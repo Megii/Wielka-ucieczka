@@ -1,17 +1,27 @@
-import javax.swing.JFrame;
+import java.util.Timer;
+public class Plansza   {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	int rozmiar1=14*40;
+	int rozmiar2=10*40;
+	
+	Zadanie zadanie = new Zadanie();
+	Timer timer = new Timer();
+	
 
-public class Plansza extends JFrame
-{
-		public Plansza()
-		{
-			setSize(300,200);
-			setTitle("Wielka ucieczka");
-		}
+	static int stan = 1;
+
+	public void init()
+	{
 		
-		public static void main(String[] args)
-		{
-			Plansza okienko = new Plansza();
-			okienko.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			okienko.setVisible(true);
-		}
+		
+			timer.scheduleAtFixedRate(zadanie, 20, 20);
+			
+			
+	}
+	
+	
+	
 }
