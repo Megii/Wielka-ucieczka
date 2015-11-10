@@ -1,10 +1,11 @@
+package game;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.Timer;
-public class TimerExample extends JFrame {
+public class Zegar extends JFrame {
     /**
 	 * 
 	 */
@@ -12,10 +13,12 @@ public class TimerExample extends JFrame {
 	final JLabel label;
     Timer countdownTimer;
     // Initial game time
-    int timeRemaining = 5;
-    public TimerExample() {
+    int timeRemaining = 120;
+    public Zegar() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(200, 200);
+        setTitle("Zegar");
+        
         label = new JLabel(String.valueOf(timeRemaining), JLabel.CENTER);
         getContentPane().add(label);
         countdownTimer = new Timer(1000, new CountdownTimerListener());
@@ -35,7 +38,7 @@ public class TimerExample extends JFrame {
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-            	new TimerExample();
+            	new Zegar();
             }
         });
     }

@@ -1,9 +1,10 @@
+package game;
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-
 import java.util.Timer;
+
 public class Plansza extends Applet   {
 
 	int rozmiar1=14*40;
@@ -20,7 +21,7 @@ public class Plansza extends Applet   {
 	{
 		
 			applet.setSize(rozmiar1, rozmiar2);
-			applet.setBackground(Color.WHITE);
+			applet.setBackground(Color.black);
 			bufor = createImage(rozmiar1, rozmiar2);
 			bg = bufor.getGraphics();
 			timer.scheduleAtFixedRate(zadanie, 20, 20);

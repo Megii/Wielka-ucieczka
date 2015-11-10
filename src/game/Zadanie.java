@@ -1,9 +1,10 @@
+package game;
 import java.util.Timer;
 import java.util.TimerTask;
 public class Zadanie extends TimerTask 
 {
 
-  TimerExample te = new TimerExample();
+  Zegar te = new Zegar();
   
  
   public void run()
