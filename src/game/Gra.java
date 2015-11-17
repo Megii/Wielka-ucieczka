@@ -11,13 +11,13 @@ import javax.swing.JFrame;
 
 public class Gra extends Canvas implements Runnable{
 		
-	private enum STATE
+	public static enum STATE
 	{
 		MENU,
 		GAME
 	}
 	
-	private STATE State = STATE.MENU;
+	public static STATE State = STATE.MENU;
 	public static String TITLE = "Wielka ucieczka";
 	public static int WIDTH = 320;
 	public static int HEIGHT = 240;
@@ -91,11 +91,22 @@ public class Gra extends Canvas implements Runnable{
 		BufferedImageLoader loader = new BufferedImageLoader();
 		try
 		{
-			background = loader.loadImage("/background.png");
+			if(State == STATE.GAME)
+			{
+				background = loader.loadImage("/background1.png");
+			}
+			else if(State == STATE.MENU)
+			{
+				background = loader.loadImage("/background.png");
+			}
 		}catch(IOException e){
 			e.printStackTrace();
 		}
+		
 		menu = new Menu();
+		
+		
+		this.addMouseListener(new MouseInput());
 	}
 	
 	private void tick()

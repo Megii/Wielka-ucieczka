@@ -10,33 +10,33 @@ public class Labirynt extends JPanel {
 
 	int[][] maze;
 	
-	int wiersze = 31;
-	int kolumny = 41;
-	int rozmiar = 12;
+	int rows = 31;
+	int columns = 41;
+	int size = 12;
 	
-	int wysokosc = -1;
-	int szerokosc = -1;
+	int height = -1;
+	int width = -1;
 	int left;
 	int top;
-	int calaWysokosc;
-	int calaSzerokosc;
+	int totalHeight;
+	int totalWidth;
 	
 	public Labirynt(){
 		setBackground(Color.black);
-		setPreferredSize(new Dimension(rozmiar*kolumny,rozmiar*wiersze));
+		setPreferredSize(new Dimension(size*columns,size*rows));
 		
 	}
 	
 	void sprawdzRozmiar() {
-		if (wezSzeorkosc() != szerokosc || getWysokosc != wysokosc){
-			szerokosc = wezSzerokosc();
-			wysokosc = wezWysokosc();
-			int s = szerokosc / kolumny;
-			int w = wysokosc / wiersze;
-			left = (szerokosc - s*kolumny) / 2;
-			top = (wysokosc - w*wiersze) /2;
-			calaSzerokosc = s*kolumny;
-			calaWysokosc = w*wiersze;
+		if (getWidth() != width || getHeight()!= height){
+			width = getWidth();
+			height = getHeight();
+			int w = width / columns;
+			int h = height / rows;
+			left = (width - w*columns) / 2;
+			top = (height - h*rows) /2;
+			totalWidth = w*columns;
+			totalWidth = h*rows;
 		}
 	}
 	
