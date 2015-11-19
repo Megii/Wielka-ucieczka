@@ -168,6 +168,8 @@ public class Gra extends Canvas implements Runnable{
 		
 		game.start();
 		
+		ChatBot chat = new ChatBot();
+		
 	}
 
 }

@@ -15,18 +15,17 @@ public class Menu {
 	{
 		Graphics2D g2d = (Graphics2D) g;
 		
-		Font fnt0 = new Font("arial", Font.BOLD , 50);
+		Font fnt0 = new Font("courier new", Font.BOLD , 50);
 		g.setFont(fnt0);
 		g.setColor(Color.white);
-		g.drawString("Labirynt", Gra.WIDTH / 2, 100);
+		g.drawString("Wielka ucieczka", Gra.WIDTH / 2, 100);
 		
 		Font fnt1 = new Font("arial",Font.BOLD, 30);
 		g.setFont(fnt1);
-		g.setColor(Color.pink);
+		g.setColor(Color.white);
 		g.drawString("Play", playButton.x + 20,playButton.y+30);
 		g.drawString("Quit", quitButton.x + 20,quitButton.y+30);
-		g2d.draw(playButton);
-		g2d.draw(quitButton);
+		
 	}
 
 }
