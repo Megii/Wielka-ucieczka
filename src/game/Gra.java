@@ -82,7 +82,7 @@ public class Gra extends Canvas implements Runnable{
 	 }
 	 g.dispose();
 	 bs.show();
-	
+	 
 	}
 	
 	
@@ -94,6 +94,7 @@ public class Gra extends Canvas implements Runnable{
 			if(State == STATE.GAME)
 			{
 				background = loader.loadImage("/background1.png");
+				
 				
 			}
 			else if(State == STATE.MENU)
@@ -171,7 +172,7 @@ public class Gra extends Canvas implements Runnable{
 		
 		game.start();
 		
-		 ChatBot chat = new ChatBot(); 
+		
 		
 	}
 

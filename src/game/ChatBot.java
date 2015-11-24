@@ -13,8 +13,8 @@ import java.lang.Math;
 public class ChatBot  extends JFrame implements KeyListener{
 
 	JPanel p=new JPanel();
-	JTextArea dialog = new JTextArea(10,40);
-	JTextArea input= new JTextArea(1,40);
+	JTextArea dialog = new JTextArea(10,30);
+	JTextArea input= new JTextArea(1,30);
 	JScrollPane scroll=new JScrollPane(
 			dialog,
 			JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
@@ -45,7 +45,7 @@ public class ChatBot  extends JFrame implements KeyListener{
 	
 	public ChatBot(){
 		super("Porozmawiajmy :)");
-		setSize(500,250);
+		setSize(370,220);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
