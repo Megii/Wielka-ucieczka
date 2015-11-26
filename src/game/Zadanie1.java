@@ -1,6 +1,4 @@
 package game;
-import Program;
-
 import java.util.TimerTask;
 public class Zadanie1 extends TimerTask 
 {

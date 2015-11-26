@@ -8,8 +8,8 @@ import java.awt.Rectangle;
 
 public class Menu {
 	
-	public Rectangle playButton = new Rectangle(Gra.WIDTH /2 + 120, 150,100,50);
-	public Rectangle quitButton = new Rectangle(Gra.WIDTH /2 + 120, 350,100,50);
+	public Rectangle playButton = new Rectangle(Gra.WIDTH /4 + 120, 150,100,50);
+	public Rectangle quitButton = new Rectangle(Gra.WIDTH /4 + 120, 350,100,50);
 	
 	public void render(Graphics g)
 	{
@@ -18,7 +18,7 @@ public class Menu {
 		Font fnt0 = new Font("courier new", Font.BOLD , 50);
 		g.setFont(fnt0);
 		g.setColor(Color.white);
-		g.drawString("Wielka ucieczka", Gra.WIDTH / 2, 100);
+		g.drawString("Wielka ucieczka", Gra.WIDTH / 4, 100);
 		
 		Font fnt1 = new Font("arial",Font.BOLD, 30);
 		g.setFont(fnt1);

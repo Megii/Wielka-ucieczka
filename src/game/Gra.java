@@ -19,9 +19,8 @@ public class Gra extends Canvas implements Runnable{
 	
 	public static STATE State = STATE.MENU;
 	public static String TITLE = "Wielka ucieczka";
-	public static int WIDTH = 320;
-	public static int HEIGHT = 240;
-	public static int SCALE = 2;
+	public static int WIDTH = 640;
+	public static int HEIGHT = 480;
 	
 	private boolean running = false;
 	private Thread thread;
@@ -30,6 +29,7 @@ public class Gra extends Canvas implements Runnable{
 	private BufferedImage background = null;
 	
 	private Menu menu;
+	private Maze maze;
 	
 	private synchronized void start()
 	{
@@ -74,7 +74,7 @@ public class Gra extends Canvas implements Runnable{
 		
 	 if(State == STATE.GAME)
 	 {
-		
+		maze.render(g);
 	 }
 	 else if(State == STATE.MENU)
 	 {
@@ -91,23 +91,13 @@ public class Gra extends Canvas implements Runnable{
 		BufferedImageLoader loader = new BufferedImageLoader();
 		try
 		{
-			if(State == STATE.GAME)
-			{
-				background = loader.loadImage("/background1.png");
-				
-				
-			}
-			else if(State == STATE.MENU)
-			{
-				background = loader.loadImage("/background.png");
-				
-				
-			}
+			background = loader.loadImage("/background.png");
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 		
 		menu = new Menu();
+		maze = new Maze();
 		
 		
 		this.addMouseListener(new MouseInput());
@@ -158,9 +148,9 @@ public class Gra extends Canvas implements Runnable{
 	{
 		Gra game = new Gra();
 		
-		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		game.setPreferredSize(new Dimension(WIDTH , HEIGHT ));
+		game.setMaximumSize(new Dimension(WIDTH , HEIGHT ));
+		game.setMinimumSize(new Dimension(WIDTH , HEIGHT ));
 		
 		JFrame frame = new JFrame(game.TITLE);
 		frame.add(game);
