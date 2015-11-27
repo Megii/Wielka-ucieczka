@@ -1,6 +1,6 @@
 package game;
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class Maze extends JPanel {
 
 	int[][] board={
-			{3,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0,0},
+			{2,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0,0},
 			{0,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0},
 			{0,1,1,1,1,1,1,1,0,0,0,0,1,0,0,1,0,0,0},
 			{0,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,1,1},
@@ -19,7 +19,7 @@ public class Maze extends JPanel {
 			{1,0,1,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,1},
 			{1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 			{1,0,0,0,1,0,1,1,1,1,0,1,1,1,1,1,1,0,1},
-			{1,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,0,1},
+			{1,0,0,0,0,0,1,0,0,1,0,1,0,1,0,0,1,0,1},
 			{1,1,1,1,1,0,1,0,0,1,0,1,0,1,0,0,1,0,1},
 			{0,0,0,0,1,0,1,0,0,1,0,1,0,1,0,0,1,0,1},
 			{0,1,1,1,1,0,1,0,0,1,0,1,0,1,1,0,1,0,1},
@@ -29,16 +29,16 @@ public class Maze extends JPanel {
 			{1,0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,0,0,0},
 			{1,0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,1,1,1},
 			{1,1,1,1,1,1,1,0,1,1,1,0,1,0,0,0,1,0,1},
-			{0,0,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,3}
+			{0,0,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,2}
 
 	  };
 	
-	int rows = board[0].length;
-	int columns = board.length;
-	int size = 20;
+	int columns = board[0].length;
+	int rows = board.length;
+	int size = 12;
 	
-	int height = 1;
-	int width = 1;
+	int height = -1;
+	int width = -1;
 	int left;
 	int top;
 	int totalHeight;
@@ -47,24 +47,27 @@ public class Maze extends JPanel {
 	
 	void render(Graphics g)
 	{
-		 for(int i=0; i<columns; i++)
+		 for(int i=0; i<rows; i++)
 		  {
-			  for(int j=0; j<rows;j++)
+			  for(int j=0; j<columns;j++)
 			  {
 				  
 				  switch(board[i][j])
 				  {
-				  	case 1:
-				  		g.setColor(Color.black);
-				  		g.fillRect(i*Gra.WIDTH/columns,j*Gra.HEIGHT/rows, Gra.WIDTH/columns, Gra.HEIGHT/rows);
-				  		break;
+				  	//Printing wall
 				  	case 0:
-				  		g.setColor(Color.white);
-				  		g.fillRect(i*Gra.WIDTH/columns,j*Gra.HEIGHT/rows, Gra.WIDTH/columns, Gra.HEIGHT/rows);
+				  		g.setColor(Color.black);
+				  		g.fillRect(j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows);
 				  		break;
-				  	case 3:
+				  	//Printing path
+				  	case 1:
+				  		g.setColor(Color.white);
+				  		g.fillRect(j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows);
+				  		break;
+				  	//Printing start and end
+				  	case 2:
 				  		g.setColor(Color.green);
-				  		g.fillRect(i*Gra.WIDTH/columns,j*Gra.HEIGHT/rows, Gra.WIDTH/columns, Gra.HEIGHT/rows);
+				  		g.fillRect(j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows);
 				  		break;
 				  
 				  }

@@ -19,8 +19,8 @@ public class Gra extends Canvas implements Runnable{
 	
 	public static STATE State = STATE.MENU;
 	public static String TITLE = "Wielka ucieczka";
-	public static int WIDTH = 640;
-	public static int HEIGHT = 480;
+	public static int WIDTH = 800;
+	public static int HEIGHT = 600;
 	
 	private boolean running = false;
 	private Thread thread;
@@ -70,6 +70,7 @@ public class Gra extends Canvas implements Runnable{
 		
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		g.drawImage(background, 0, 0,null);
+		
 		
 		
 	 if(State == STATE.GAME)

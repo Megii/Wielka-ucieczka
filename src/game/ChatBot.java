@@ -26,10 +26,10 @@ public class ChatBot  extends JFrame implements KeyListener{
 	
 	String[] [] chatBot={
 			//standard greetings
-			{"czeœæ", "hello", "hej", "dzieñ dobry", "siema", "czesc"},
+			{"czeœæ", "hello", "hej", "dzieñ dobry", "siema", "czesc","hi"},
 			{"czeœæ","hello","dzieñ dobry"},
 			//question greetings
-			{"jak siê masz", "co tam", "co u Ciebie"},
+			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz"},
 			{"dobrze", "ok"},
 			//yes
 			{"tak"},
@@ -93,6 +93,7 @@ if(j*2==chatBot.length-1 && response==0){
 			if (response==1){
 				int r=(int)Math.floor(Math.random()*chatBot[chatBot.length-1].length);
 				addText("\nHoracy\t"+chatBot[chatBot.length-1][r]);	
+				
 			}
 			addText("\n");
 					
