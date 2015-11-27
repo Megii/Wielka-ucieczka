@@ -27,6 +27,8 @@ public class Gra extends Canvas implements Runnable{
 	
 	private BufferedImage image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 	private BufferedImage background = null;
+	public static BufferedImage wall = null;
+	public static BufferedImage floor = null;
 	
 	private Menu menu;
 	private Maze maze;
@@ -69,7 +71,7 @@ public class Gra extends Canvas implements Runnable{
 		Graphics g = bs.getDrawGraphics();
 		
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-		g.drawImage(background, 0, 0,null);
+		g.drawImage(background, 0, 0,getWidth(),getHeight(),null);
 		
 		
 		
@@ -93,6 +95,8 @@ public class Gra extends Canvas implements Runnable{
 		try
 		{
 			background = loader.loadImage("/background.png");
+			wall = loader.loadImage("/wall.png");
+			floor = loader.loadImage("/floor.png");
 		}catch(IOException e){
 			e.printStackTrace();
 		}

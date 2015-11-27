@@ -56,13 +56,12 @@ public class Maze extends JPanel {
 				  {
 				  	//Printing wall
 				  	case 0:
-				  		g.setColor(Color.black);
-				  		g.fillRect(j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows);
+				  		g.drawImage(Gra.wall,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows,null);
 				  		break;
 				  	//Printing path
 				  	case 1:
-				  		g.setColor(Color.white);
-				  		g.fillRect(j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows);
+				  	
+				  		g.drawImage(Gra.floor,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows,null);
 				  		break;
 				  	//Printing start and end
 				  	case 2:
