@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -29,10 +30,10 @@ public class MouseInput implements MouseListener{
 		int mx = e.getX();
 		int my = e.getY();
 		
-		/*
-		public Rectangle playButton = new Rectangle(Gra.WIDTH/2+120, 150,100,50);
-		public Rectangle quitButton = new Rectangle(Gra.WIDTH/2+120, 350,100,50);
-		*/
+		
+		/*public Rectangle playButton = new Rectangle(Gra.WIDTH/2+120, 150,100,50);
+		public Rectangle quitButton = new Rectangle(Gra.WIDTH/2+120, 350,100,50);*/
+		
 		if(Gra.State == Gra.STATE.MENU)
 		{
 			
