@@ -16,6 +16,10 @@
 	</natures>
 	<variableList>
 		<variable>
+			<name>image</name>
+			<value>file:/E:/workshop/Wielka-ucieczka/res</value>
+		</variable>
+		<variable>
 			<name>images</name>
 			<value>file:/E:/workshop/Wielka-ucieczka/res</value>
 		</variable>
