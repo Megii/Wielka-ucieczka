@@ -225,6 +225,7 @@ public class Gra extends Applet implements Runnable,KeyListener{
 		private BufferedImage background = null;
 		public static BufferedImage wall = null;
 		public static BufferedImage floor = null;
+		public static BufferedImage postac = null;
 		
 		
 		private Menu menu;
@@ -294,6 +295,7 @@ public class Gra extends Applet implements Runnable,KeyListener{
 				background = loader.loadImage("/background.png");
 				wall = loader.loadImage("/wall.png");
 				floor = loader.loadImage("/floor.png");
+				postac = loader.loadImage("/postac.png");
 			}catch(IOException e){
 				e.printStackTrace();
 			}

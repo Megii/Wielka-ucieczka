@@ -29,7 +29,7 @@ public class Maze extends JPanel {
 			{1,0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,0,0,0},
 			{1,0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,1,1,1},
 			{1,1,1,1,1,1,1,0,1,1,1,0,1,0,0,0,1,0,1},
-			{0,0,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,2}
+			{0,0,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,1}
 
 	  };
 	
@@ -65,8 +65,7 @@ public class Maze extends JPanel {
 				  		break;
 				  	//Printing start and end
 				  	case 2:
-				  		g.setColor(Color.green);
-				  		g.fillRect(j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows);
+				  		g.drawImage(Gra.postac,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows,null);
 				  		break;
 				  
 				  }
