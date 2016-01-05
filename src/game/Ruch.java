@@ -97,9 +97,10 @@ public class Ruch  extends JFrame implements KeyListener{
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
 					if(Gra.maze.board[x][y+1]==1)
 					{
-						Gra.maze.board[x][y+1]=2;
-						Gra.maze.board[x][y]=1;
+						Gra.maze.fog[x][y+1]=2;
+						Gra.maze.fog[x][y]=1;
 						y++;
+						Gra.uncover(x,y);
 					}	
 					
 				}
@@ -111,9 +112,10 @@ public class Ruch  extends JFrame implements KeyListener{
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
 					if(Gra.maze.board[x][y-1]==1)
 					{
-						Gra.maze.board[x][y-1]=2;
-						Gra.maze.board[x][y]=1;
+						Gra.maze.fog[x][y-1]=2;
+						Gra.maze.fog[x][y]=1;
 						y--;
+						Gra.uncover(x,y);
 					}	
 				}
 				
@@ -124,9 +126,10 @@ public class Ruch  extends JFrame implements KeyListener{
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
 					if(Gra.maze.board[x-1][y]==1)
 					{
-						Gra.maze.board[x-1][y]=2;
-						Gra.maze.board[x][y]=1;
+						Gra.maze.fog[x-1][y]=2;
+						Gra.maze.fog[x][y]=1;
 						x--;
+						Gra.uncover(x,y);
 					}	
 				}
 				
@@ -138,9 +141,10 @@ public class Ruch  extends JFrame implements KeyListener{
 
 					if(Gra.maze.board[x+1][y]==1)
 					{
-						Gra.maze.board[x+1][y]=2;
-						Gra.maze.board[x][y]=1;
+						Gra.maze.fog[x+1][y]=2;
+						Gra.maze.fog[x][y]=1;
 						x++;
+						Gra.uncover(x,y);
 					}	
 				}
 		
