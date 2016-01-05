@@ -133,7 +133,7 @@
 			}
 			stop();
 		}
-		public void uncover(int x ,int y){
+		public static void uncover(int x ,int y){
 			if(maze.fog[x][y+1]!=maze.board[x][y+1]&& maze.board[x][y+1]!=2&& y+1<20)
 				maze.fog[x][y+1]=maze.board[x][y+1];
 			if(maze.fog[x][y-1]!=maze.board[x][y-1]&& maze.board[x][y-1]!=2&& y-1>=0)
@@ -156,7 +156,7 @@
 			
 			if(State == STATE.GAME)
 			{
-			//int key=e.getKeyCode();
+			
 			if(key== KeyEvent.VK_LEFT){
 				
 				if(maze.board[x][y-1]==1)
