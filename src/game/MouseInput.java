@@ -44,7 +44,7 @@ public class MouseInput implements MouseListener{
 			if(my >= 150 && my <= 200)
 			{
 				Gra.State = Gra.STATE.GAME;
-				ChatBot chat = new ChatBot();
+				Ruch chat = new Ruch();
 			}
 				
 		}
