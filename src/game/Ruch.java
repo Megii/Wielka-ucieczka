@@ -12,8 +12,8 @@ import java.lang.Math;
 public class Ruch  extends JFrame implements KeyListener{
 
 	
-	int x=0;
-	int y=0;
+	int x=1;
+	int y=1;
 	JPanel p=new JPanel();
 	JTextArea dialog = new JTextArea(10,30);
 	JTextArea input= new JTextArea(1,30);
