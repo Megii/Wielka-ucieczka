@@ -17,6 +17,7 @@ public class Ruch  extends JFrame implements KeyListener{
 	JPanel p=new JPanel();
 	JTextArea dialog = new JTextArea(10,30);
 	JTextArea input= new JTextArea(1,30);
+
 	JScrollPane scroll=new JScrollPane(
 			dialog,
 			JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
