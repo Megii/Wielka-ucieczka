@@ -46,7 +46,7 @@ public class Ruch  extends JFrame implements KeyListener{
 			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz"},
 			{"dobrze", "ok"},
 			//default
-			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"}
+			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
 	};
 	

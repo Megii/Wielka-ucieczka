@@ -33,6 +33,29 @@ public class Maze extends JPanel {
 
 	  };
 	
+	int[][] fog={
+			{2,1,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{0,0,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9},
+			{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9}
+	};
+	
 	int columns = board[0].length;
 	int rows = board.length;
 	int size = 12;
@@ -52,7 +75,7 @@ public class Maze extends JPanel {
 			  for(int j=0; j<columns;j++)
 			  {
 				  
-				  switch(board[i][j])
+				  switch(fog[i][j])
 				  {
 				  	//Printing wall
 				  	case 0:
@@ -60,7 +83,6 @@ public class Maze extends JPanel {
 				  		break;
 				  	//Printing path
 				  	case 1:
-				  	
 				  		g.drawImage(Gra.floor,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows,null);
 				  		break;
 				  	//Printing start and end
@@ -69,6 +91,10 @@ public class Maze extends JPanel {
 				  		break;
 				  	case 3:
 				  		g.drawImage(Gra.koniec,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows,null);
+				  		break;
+				  	case 9:
+				  		g.setColor(Color.BLACK);
+				  		g.fillRect(j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows);
 				  		break;
 				  
 				  }

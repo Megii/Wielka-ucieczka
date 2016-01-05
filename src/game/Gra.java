@@ -133,9 +133,27 @@
 			}
 			stop();
 		}
-		
+		public void uncover(int x ,int y){
+			if(maze.fog[x][y+1]!=maze.board[x][y+1]&& maze.board[x][y+1]!=2&& y+1<20)
+				maze.fog[x][y+1]=maze.board[x][y+1];
+			if(maze.fog[x][y-1]!=maze.board[x][y-1]&& maze.board[x][y-1]!=2&& y-1>=0)
+				maze.fog[x][y-1]=maze.board[x][y-1];
+			if(maze.fog[x+1][y]!=maze.board[x+1][y]&& maze.board[x+1][y]!=2&& x+1>=0)
+				maze.fog[x+1][y]=maze.board[x+1][y];
+			if(maze.fog[x+1][y+1]!=maze.board[x+1][y+1]&& maze.board[x+1][y+1]!=2&& x+1>=0&& y+1<20)
+				maze.fog[x+1][y+1]=maze.board[x+1][y+1];
+			if(maze.fog[x+1][y-1]!=maze.board[x+1][y-1]&& maze.board[x+1][y-1]!=22&& x+1>=0&& y-1>=0)
+				maze.fog[x+1][y-1]=maze.board[x+1][y-1];
+			if(maze.fog[x-1][y]!=maze.board[x-1][y]&& maze.board[x-1][y]!=2&&x-1 <20)
+				maze.fog[x-1][y]=maze.board[x+1][y];
+			if(maze.fog[x-1][y+1]!=maze.board[x-1][y+1]&& maze.board[x-1][y+1]!=2&&x-1 <20&& y+1<20)
+				maze.fog[x-1][y+1]=maze.board[x-1][y+1];
+			if(maze.fog[x-1][y-1]!=maze.board[x-1][y-1]&& maze.board[x-1][y-1]!=2&& x-1<20 && y-1>=0)
+				maze.fog[x-1][y-1]=maze.board[x-1][y-1];
+		}
 		public void keyPressed(int key)
 		{
+			
 			if(State == STATE.GAME)
 			{
 			//int key=e.getKeyCode();
@@ -143,38 +161,48 @@
 				
 				if(maze.board[x][y-1]==1)
 				{
-					maze.board[x][y-1]=2;
-					maze.board[x][y]=1;
+					maze.fog[x][y-1]=2;
+					maze.fog[x][y]=1;
 					y--;
+					uncover(x,y);
+					
 				}	
 			}
 			else if(key == KeyEvent.VK_UP){
 				if(maze.board[x-1][y]==1)
 				{
-					maze.board[x-1][y]=2;
-					maze.board[x][y]=1;
+					maze.fog[x-1][y]=2;
+					maze.fog[x][y]=1;
 					x--;
+					
+					uncover(x,y);
 				}	
 			}	
 			else if (key== KeyEvent.VK_RIGHT){
 				if(maze.board[x][y+1]==1)
 				{
-					maze.board[x][y+1]=2;
-					maze.board[x][y]=1;
+					maze.fog[x][y+1]=2;
+					maze.fog[x][y]=1;
 					y++;
+					uncover(x,y);
+					
 				}	
 			}
 			else if(key == KeyEvent.VK_DOWN){
 				
 				if(maze.board[x+1][y]==1)
 				{
-					maze.board[x+1][y]=2;
-					maze.board[x][y]=1;
+					maze.fog[x+1][y]=2;
+					maze.fog[x][y]=1;
 					x++;
+					uncover(x,y);
+					
 				}	
 			}
 			}
+			
 			}
+			
 		
 		
 		
