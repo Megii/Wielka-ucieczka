@@ -42,7 +42,7 @@ public class Ruch  extends JFrame implements KeyListener{
 	};
 	
 	public static void main(String[] args){
-		new ChatBot();
+		new Ruch();
 	}
 	
 	public Ruch(){
