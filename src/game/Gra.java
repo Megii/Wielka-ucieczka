@@ -16,8 +16,8 @@
 			MENU,
 			GAME
 		}
-		int x=0;
-		int y=0;
+		int x=1;
+		int y=1;
 		public static STATE State = STATE.MENU;
 		public static String TITLE = "Wielka ucieczka";
 		public static int WIDTH = 800;
@@ -134,21 +134,21 @@
 			stop();
 		}
 		public static void uncover(int x ,int y){
-			if(maze.fog[x][y+1]!=maze.board[x][y+1]&& maze.board[x][y+1]!=2&& y+1<20)
+			if(maze.fog[x][y+1]!=maze.board[x][y+1]&& maze.board[x][y+1]!=2)
 				maze.fog[x][y+1]=maze.board[x][y+1];
-			if(maze.fog[x][y-1]!=maze.board[x][y-1]&& maze.board[x][y-1]!=2&& y-1>=0)
+			if(maze.fog[x][y-1]!=maze.board[x][y-1]&& maze.board[x][y-1]!=2)
 				maze.fog[x][y-1]=maze.board[x][y-1];
-			if(maze.fog[x+1][y]!=maze.board[x+1][y]&& maze.board[x+1][y]!=2&& x+1>=0)
+			if(maze.fog[x+1][y]!=maze.board[x+1][y]&& maze.board[x+1][y]!=2)
 				maze.fog[x+1][y]=maze.board[x+1][y];
-			if(maze.fog[x+1][y+1]!=maze.board[x+1][y+1]&& maze.board[x+1][y+1]!=2&& x+1>=0&& y+1<20)
+			if(maze.fog[x+1][y+1]!=maze.board[x+1][y+1]&& maze.board[x+1][y+1]!=2)
 				maze.fog[x+1][y+1]=maze.board[x+1][y+1];
-			if(maze.fog[x+1][y-1]!=maze.board[x+1][y-1]&& maze.board[x+1][y-1]!=22&& x+1>=0&& y-1>=0)
+			if(maze.fog[x+1][y-1]!=maze.board[x+1][y-1]&& maze.board[x+1][y-1]!=22)
 				maze.fog[x+1][y-1]=maze.board[x+1][y-1];
-			if(maze.fog[x-1][y]!=maze.board[x-1][y]&& maze.board[x-1][y]!=2&&x-1 <20)
-				maze.fog[x-1][y]=maze.board[x+1][y];
-			if(maze.fog[x-1][y+1]!=maze.board[x-1][y+1]&& maze.board[x-1][y+1]!=2&&x-1 <20&& y+1<20)
+			if(maze.fog[x-1][y]!=maze.board[x-1][y]&& maze.board[x-1][y]!=2)
+				maze.fog[x-1][y]=maze.board[x-1][y];
+			if(maze.fog[x-1][y+1]!=maze.board[x-1][y+1]&& maze.board[x-1][y+1]!=2)
 				maze.fog[x-1][y+1]=maze.board[x-1][y+1];
-			if(maze.fog[x-1][y-1]!=maze.board[x-1][y-1]&& maze.board[x-1][y-1]!=2&& x-1<20 && y-1>=0)
+			if(maze.fog[x-1][y-1]!=maze.board[x-1][y-1]&& maze.board[x-1][y-1]!=2)
 				maze.fog[x-1][y-1]=maze.board[x-1][y-1];
 		}
 		public void keyPressed(int key)
