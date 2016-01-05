@@ -39,6 +39,12 @@ public class Ruch  extends JFrame implements KeyListener{
 			//dol
 			{"d", "dol", "kieruj sie w dol", "udaj sie w dol", "poruszaj sie w dol"},
 			{"poruszam sie do dolu", "zmierzam do dolu", "kieruje sie do dolu"},
+			//przywitanie
+			{"czeœæ", "hello", "hej", "dzieñ dobry", "siema", "czesc","hi"},
+			{"czeœæ","hello","dzieñ dobry"},
+			//pytania
+			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz"},
+			{"dobrze", "ok"},
 			//default
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"}
 			
@@ -138,6 +144,19 @@ public class Ruch  extends JFrame implements KeyListener{
 					}	
 				}
 		
+				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==4)
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+				}
+				
+				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==5)
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+				}
 j++;
 if(j*2==chatBot.length-1 && response==0){
 	response=1;
