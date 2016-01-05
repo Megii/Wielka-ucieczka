@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
 import java.lang.Math;
 public class Ruch  extends JFrame implements KeyListener{
 
-	//Maze maze = new Maze();
+	
 	int x=0;
 	int y=0;
 	JPanel p=new JPanel();
