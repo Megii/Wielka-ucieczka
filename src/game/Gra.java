@@ -35,7 +35,7 @@
 		
 		
 		private Menu menu;
-		private Maze maze;
+		public static Maze maze;
 		
 		private synchronized void start()
 		{
@@ -134,11 +134,11 @@
 			stop();
 		}
 		
-		public void keyPressed(KeyEvent e)
+		public void keyPressed(int key)
 		{
 			if(State == STATE.GAME)
 			{
-			int key=e.getKeyCode();
+			//int key=e.getKeyCode();
 			if(key== KeyEvent.VK_LEFT){
 				
 				if(maze.board[x][y-1]==1)

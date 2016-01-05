@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
 import java.lang.Math;
 public class Ruch  extends JFrame implements KeyListener{
 
-	Maze maze = new Maze();
+	//Maze maze = new Maze();
 	int x=0;
 	int y=0;
 	JPanel p=new JPanel();
@@ -89,10 +89,10 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
-					if(maze.board[x][y+1]==1)
+					if(Gra.maze.board[x][y+1]==1)
 					{
-						maze.board[x][y+1]=2;
-						maze.board[x][y]=1;
+						Gra.maze.board[x][y+1]=2;
+						Gra.maze.board[x][y]=1;
 						y++;
 					}	
 					
@@ -103,10 +103,10 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
-					if(maze.board[x][y-1]==1)
+					if(Gra.maze.board[x][y-1]==1)
 					{
-						maze.board[x][y-1]=2;
-						maze.board[x][y]=1;
+						Gra.maze.board[x][y-1]=2;
+						Gra.maze.board[x][y]=1;
 						y--;
 					}	
 				}
@@ -116,10 +116,10 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
-					if(maze.board[x-1][y]==1)
+					if(Gra.maze.board[x-1][y]==1)
 					{
-						maze.board[x-1][y]=2;
-						maze.board[x][y]=1;
+						Gra.maze.board[x-1][y]=2;
+						Gra.maze.board[x][y]=1;
 						x--;
 					}	
 				}
@@ -130,10 +130,10 @@ public class Ruch  extends JFrame implements KeyListener{
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
 
-					if(maze.board[x+1][y]==1)
+					if(Gra.maze.board[x+1][y]==1)
 					{
-						maze.board[x+1][y]=2;
-						maze.board[x][y]=1;
+						Gra.maze.board[x+1][y]=2;
+						Gra.maze.board[x][y]=1;
 						x++;
 					}	
 				}
