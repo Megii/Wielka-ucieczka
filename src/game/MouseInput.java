@@ -65,19 +65,19 @@ public class MouseInput implements MouseListener{
 		}
 		if(Gra.State == Gra.STATE.CHOICE)
 		{
-			//rycerz
+			//batman
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
 					Gra.hero = Gra.batman;
-			//policja
+			//superman
 			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
 					Gra.hero = Gra.superman;
-			//pirat
+			//woman
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
 					Gra.hero = Gra.woman;
-			//ninja
+			//clown
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
 					Gra.hero = Gra.clown;

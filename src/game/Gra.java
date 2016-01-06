@@ -38,7 +38,7 @@
 		public static BufferedImage woman = null;
 		public static BufferedImage superman = null;
 		public static BufferedImage koniec = null;
-		
+		public static BufferedImage wygrana = null;
 		
 		public static BufferedImage hero = null;
 		private Menu menu;
@@ -118,10 +118,11 @@
 				wall = loader.loadImage("/wall.png");
 				floor = loader.loadImage("/floor.png");
 				batman = loader.loadImage("/batman.png");
+				superman = loader.loadImage("/superman.png");
 				woman = loader.loadImage("/woman.png");
 				clown = loader.loadImage("/clown.png");
-				superman = loader.loadImage("/superman.png");
 				koniec = loader.loadImage("/koniec.png");
+				wygrana = loader.loadImage("/wygrana.png");
 			}catch(IOException e){
 				e.printStackTrace();
 			}
