@@ -14,8 +14,11 @@
 		public static enum STATE
 		{
 			MENU,
-			GAME
+			GAME,
+			CHOICE,
+			END
 		}
+		
 		int x=1;
 		int y=1;
 		public static STATE State = STATE.MENU;
@@ -24,18 +27,21 @@
 		public static int HEIGHT = 600;
 		
 		private boolean running = false;
-		private Thread thread;
+		public static Thread thread;
 		
 		private BufferedImage image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		private BufferedImage background = null;
 		public static BufferedImage wall = null;
 		public static BufferedImage floor = null;
-		public static BufferedImage postac = null;
+		public static BufferedImage postac1 = null;
+		public static BufferedImage krab = null;
+		public static BufferedImage ludzik = null;
 		public static BufferedImage koniec = null;
 		
-		
+		public static BufferedImage hero = null;
 		private Menu menu;
 		public static Maze maze;
+		private Choice choice;
 		
 		private synchronized void start()
 		{
@@ -87,6 +93,14 @@
 		 {
 			 menu.render(g);
 		 }
+		 else if(State == STATE.END)
+		 {
+			 
+		 }
+		 else if(State == STATE.CHOICE)
+		 {
+			 choice.render(g);
+		 }
 		 g.dispose();
 		 bs.show();
 		 
@@ -101,7 +115,9 @@
 				background = loader.loadImage("/background.png");
 				wall = loader.loadImage("/wall.png");
 				floor = loader.loadImage("/floor.png");
-				postac = loader.loadImage("/postac.png");
+				postac1 = loader.loadImage("/postac1.png");
+				krab = loader.loadImage("/krab.png");
+				ludzik = loader.loadImage("/ludzik.png");
 				koniec = loader.loadImage("/koniec.png");
 			}catch(IOException e){
 				e.printStackTrace();
@@ -109,6 +125,7 @@
 			
 			menu = new Menu();
 			maze = new Maze();
+			choice = new Choice();
 			
 			
 			
@@ -197,7 +214,11 @@
 					x++;
 					uncover(x,y);
 					
-				}	
+				}
+				if(maze.board[x+1][y]==3)
+				{
+					State = STATE.END;
+				}
 			}
 			}
 			

@@ -36,16 +36,20 @@ public class MouseInput implements MouseListener{
 		
 		if(Gra.State == Gra.STATE.MENU)
 		{
-			
-		
+					
 		//Play Button
 		if(mx >= Gra.WIDTH /4 + 120 && mx <= Gra.WIDTH /2 + 220)
 		{
 			if(my >= 150 && my <= 200)
 			{
-				Gra.State = Gra.STATE.GAME;
-				Ruch chat = new Ruch();
-			}
+				Gra.State = Gra.STATE.CHOICE;
+				try {
+					e.wait(1000);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				}
 				
 		}
 		
@@ -58,6 +62,23 @@ public class MouseInput implements MouseListener{
 			}
 				
 		}
+		}
+		if(Gra.State == Gra.STATE.CHOICE)
+		{
+			//postac1
+			if(mx >= 0 && mx <= Gra.WIDTH /2)
+				if(my >= 0 && my <= Gra.HEIGHT /2)
+					Gra.hero = Gra.postac1;
+			//krab
+			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
+				if(my >= 0 && my <= Gra.HEIGHT /2)
+					Gra.hero = Gra.postac1;
+			//ludzik
+			if(mx >= 0 && mx <= Gra.WIDTH /2)
+				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
+					Gra.hero = Gra.ludzik;
+			Ruch chat = new Ruch();
+			Gra.State = Gra.STATE.GAME;
 		}
 	}
 

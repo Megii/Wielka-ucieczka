@@ -84,7 +84,7 @@ public class Maze extends JPanel {
 				  		break;
 				  	//Printing start and end
 				  	case 2:
-				  		g.drawImage(Gra.postac,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows+1,null);
+				  		g.drawImage(Gra.hero,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows+1,null);
 				  		break;
 				  	case 3:
 				  		g.drawImage(Gra.koniec,j*Gra.WIDTH/columns,i*Gra.HEIGHT/rows, Gra.WIDTH/columns+1, Gra.HEIGHT/rows+1,null);
