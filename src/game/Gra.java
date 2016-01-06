@@ -124,6 +124,7 @@
 				clown = loader.loadImage("/clown.png");
 				koniec = loader.loadImage("/koniec.png");
 				wygrana = loader.loadImage("/wygrana.png");
+				
 			}catch(IOException e){
 				e.printStackTrace();
 			}

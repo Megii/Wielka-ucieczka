@@ -2,6 +2,7 @@ package game;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.util.Timer;
 
 import javax.swing.JPanel;
 
@@ -9,6 +10,8 @@ import javax.swing.JPanel;
 
 public class Maze extends JPanel {
 
+	
+	
 	int[][] board={
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 			{0,2,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0},
@@ -69,7 +72,7 @@ public class Maze extends JPanel {
 	{
 		 for(int i=0; i<rows; i++)
 		  {
-			  for(int j=0; j<columns;j++)
+			  for(int j=1; j<=columns;j++)
 			  {
 				  
 				  switch(fog[i][j])
