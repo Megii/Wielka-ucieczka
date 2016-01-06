@@ -45,6 +45,7 @@
 		public static Maze maze;
 		private Choice choice;
 		
+		
 		private synchronized void start()
 		{
 			if(running)
