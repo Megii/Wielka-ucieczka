@@ -98,7 +98,7 @@
 		 }
 		 else if(State == STATE.END)
 		 {
-			 
+			 g.drawImage(wygrana,0,0,null);
 		 }
 		 else if(State == STATE.CHOICE)
 		 {
@@ -220,7 +220,7 @@
 					uncover(x,y);
 					
 				}
-				if(maze.board[x+1][y]==3)
+				else if(maze.board[x+1][y]==3)
 				{
 					State = STATE.END;
 				}

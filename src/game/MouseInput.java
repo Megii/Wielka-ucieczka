@@ -43,12 +43,7 @@ public class MouseInput implements MouseListener{
 			if(my >= 150 && my <= 200)
 			{
 				Gra.State = Gra.STATE.CHOICE;
-				try {
-					e.wait(1000);
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				
 				}
 				
 		}
@@ -63,22 +58,22 @@ public class MouseInput implements MouseListener{
 				
 		}
 		}
-		if(Gra.State == Gra.STATE.CHOICE)
+		else if(Gra.State == Gra.STATE.CHOICE)
 		{
 			//batman
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
 					Gra.hero = Gra.batman;
-			//superman
+			//woman
 			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
-					Gra.hero = Gra.superman;
-			//woman
+					Gra.hero = Gra.woman;
+			//superman
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
-					Gra.hero = Gra.woman;
+					Gra.hero = Gra.superman;
 			//clown
-			if(mx >= 0 && mx <= Gra.WIDTH /2)
+			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
 				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
 					Gra.hero = Gra.clown;
 			
