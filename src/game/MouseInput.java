@@ -65,18 +65,23 @@ public class MouseInput implements MouseListener{
 		}
 		if(Gra.State == Gra.STATE.CHOICE)
 		{
-			//postac1
+			//rycerz
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
-					Gra.hero = Gra.postac1;
-			//krab
+					Gra.hero = Gra.rycerz;
+			//policja
 			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
-					Gra.hero = Gra.postac1;
-			//ludzik
+					Gra.hero = Gra.policja;
+			//pirat
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
-					Gra.hero = Gra.ludzik;
+					Gra.hero = Gra.pirat;
+			//ninja
+			if(mx >= 0 && mx <= Gra.WIDTH /2)
+				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
+					Gra.hero = Gra.ninja;
+			
 			Ruch chat = new Ruch();
 			Gra.State = Gra.STATE.GAME;
 		}

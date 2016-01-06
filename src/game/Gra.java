@@ -33,10 +33,12 @@
 		private BufferedImage background = null;
 		public static BufferedImage wall = null;
 		public static BufferedImage floor = null;
-		public static BufferedImage postac1 = null;
-		public static BufferedImage krab = null;
-		public static BufferedImage ludzik = null;
+		public static BufferedImage ninja = null;
+		public static BufferedImage rycerz = null;
+		public static BufferedImage pirat = null;
+		public static BufferedImage policja = null;
 		public static BufferedImage koniec = null;
+		
 		
 		public static BufferedImage hero = null;
 		private Menu menu;
@@ -115,9 +117,10 @@
 				background = loader.loadImage("/background.png");
 				wall = loader.loadImage("/wall.png");
 				floor = loader.loadImage("/floor.png");
-				postac1 = loader.loadImage("/postac1.png");
-				krab = loader.loadImage("/krab.png");
-				ludzik = loader.loadImage("/ludzik.png");
+				ninja = loader.loadImage("/ninja.png");
+				rycerz = loader.loadImage("/rycerz.png");
+				policja = loader.loadImage("/policja.png");
+				pirat = loader.loadImage("/pirat.png");
 				koniec = loader.loadImage("/koniec.png");
 			}catch(IOException e){
 				e.printStackTrace();
