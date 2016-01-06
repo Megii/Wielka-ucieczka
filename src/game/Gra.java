@@ -33,10 +33,10 @@
 		private BufferedImage background = null;
 		public static BufferedImage wall = null;
 		public static BufferedImage floor = null;
-		public static BufferedImage ninja = null;
-		public static BufferedImage rycerz = null;
-		public static BufferedImage pirat = null;
-		public static BufferedImage policja = null;
+		public static BufferedImage batman = null;
+		public static BufferedImage clown = null;
+		public static BufferedImage woman = null;
+		public static BufferedImage superman = null;
 		public static BufferedImage koniec = null;
 		
 		
@@ -117,10 +117,10 @@
 				background = loader.loadImage("/background.png");
 				wall = loader.loadImage("/wall.png");
 				floor = loader.loadImage("/floor.png");
-				ninja = loader.loadImage("/ninja.png");
-				rycerz = loader.loadImage("/rycerz.png");
-				policja = loader.loadImage("/policja.png");
-				pirat = loader.loadImage("/pirat.png");
+				batman = loader.loadImage("/batman.png");
+				woman = loader.loadImage("/woman.png");
+				clown = loader.loadImage("/clown.png");
+				superman = loader.loadImage("/superman.png");
 				koniec = loader.loadImage("/koniec.png");
 			}catch(IOException e){
 				e.printStackTrace();

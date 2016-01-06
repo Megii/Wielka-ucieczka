@@ -68,19 +68,19 @@ public class MouseInput implements MouseListener{
 			//rycerz
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
-					Gra.hero = Gra.rycerz;
+					Gra.hero = Gra.batman;
 			//policja
 			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
 				if(my >= 0 && my <= Gra.HEIGHT /2)
-					Gra.hero = Gra.policja;
+					Gra.hero = Gra.superman;
 			//pirat
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
-					Gra.hero = Gra.pirat;
+					Gra.hero = Gra.woman;
 			//ninja
 			if(mx >= 0 && mx <= Gra.WIDTH /2)
 				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
-					Gra.hero = Gra.ninja;
+					Gra.hero = Gra.clown;
 			
 			Ruch chat = new Ruch();
 			Gra.State = Gra.STATE.GAME;
