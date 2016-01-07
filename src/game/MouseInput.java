@@ -78,9 +78,9 @@ public class MouseInput implements MouseListener{
 					Gra.hero = Gra.clown;
 			
 			Ruch chat = new Ruch();
-			Gra.State = Gra.STATE.GAME;
 			Gra.zegar = new Zegar();
-		}
+			Gra.State = Gra.STATE.GAME;
+					}
 	}
 
 	@Override

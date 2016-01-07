@@ -1,14 +1,15 @@
 	package game;
 	import java.awt.Canvas;
-	import java.awt.Dimension;
-	import java.awt.Graphics;
-	import java.awt.event.KeyEvent;
-	import java.awt.event.KeyListener;
-	import java.awt.image.BufferStrategy;
-	import java.awt.image.BufferedImage;
-	import java.io.IOException;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-	import javax.swing.JFrame;
+import javax.swing.JFrame;
 	public class Gra extends Canvas implements Runnable{
 			
 		public static enum STATE
@@ -16,7 +17,8 @@
 			MENU,
 			GAME,
 			CHOICE,
-			END
+			END,
+			LOSE
 		}
 		
 		int x=1;
@@ -31,6 +33,7 @@
 		
 		private BufferedImage image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		private BufferedImage background = null;
+		private BufferedImage time = null;
 		public static BufferedImage wall = null;
 		public static BufferedImage floor = null;
 		public static BufferedImage batman = null;
@@ -106,6 +109,15 @@
 		 {
 			 choice.render(g);
 		 }
+		
+		 else if(State == STATE.LOSE){
+			 
+			 g.drawImage(time,0,0,null);
+			 Font fnt0 = new Font("courier new", Font.BOLD , 50);
+			 g.setColor(Color.black);
+			 g.setFont(fnt0);
+			 g.drawString("Przegra³eœ", WIDTH/2, HEIGHT/2);
+		 }
 		 g.dispose();
 		 bs.show();
 		 
@@ -126,6 +138,7 @@
 				clown = loader.loadImage("/clown.png");
 				koniec = loader.loadImage("/koniec.png");
 				wygrana = loader.loadImage("/wygrana.png");
+				time = loader.loadImage("/przegrana.png");
 				
 			}catch(IOException e){
 				e.printStackTrace();
@@ -155,7 +168,11 @@
 			{
 			
 				render();
+				if(State == STATE.GAME && zegar.timeRemaining == 0 )
+					 State = STATE.LOSE;
+				
 			}
+			
 			stop();
 		}
 		public static void uncover(int x ,int y){
