@@ -13,7 +13,7 @@ public class Zegar extends JFrame {
 	final JLabel label;
     Timer countdownTimer;
     // Initial game time
-    int timeRemaining = 10;
+    int timeRemaining = 120;
     public Zegar() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(200, 200);

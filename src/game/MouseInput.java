@@ -79,6 +79,7 @@ public class MouseInput implements MouseListener{
 			
 			Ruch chat = new Ruch();
 			Gra.State = Gra.STATE.GAME;
+			Gra.zegar = new Zegar();
 		}
 	}
 

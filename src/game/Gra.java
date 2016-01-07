@@ -44,6 +44,7 @@
 		private Menu menu;
 		public static Maze maze;
 		private Choice choice;
+		static Zegar zegar;
 		
 		
 		private synchronized void start()
@@ -91,6 +92,7 @@
 		 if(State == STATE.GAME)
 		 {
 			maze.render(g);
+			
 		 }
 		 else if(State == STATE.MENU)
 		 {
