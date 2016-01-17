@@ -41,8 +41,8 @@ import java.awt.Rectangle;
 
 public class Menu {
 	
-	public Rectangle playButton = new Rectangle(Gra.WIDTH /4 + 120, 150,100,50);
-	public Rectangle quitButton = new Rectangle(Gra.WIDTH /4 + 120, 350,100,50);
+	public Rectangle playButton = new Rectangle(Gra.WIDTH /4 + 120, 250,100,50);
+	public Rectangle quitButton = new Rectangle(Gra.WIDTH /4 + 120, 500,100,50);
 	
 	public void render(Graphics g)
 	{
