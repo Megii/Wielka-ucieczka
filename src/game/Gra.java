@@ -113,10 +113,6 @@ import javax.swing.JFrame;
 		 else if(State == STATE.LOSE){
 			 
 			 g.drawImage(time,0,0,null);
-			 Font fnt0 = new Font("courier new", Font.BOLD , 50);
-			 g.setColor(Color.black);
-			 g.setFont(fnt0);
-			 g.drawString("Przegra³eœ", WIDTH/2, HEIGHT/2);
 		 }
 		 g.dispose();
 		 bs.show();
