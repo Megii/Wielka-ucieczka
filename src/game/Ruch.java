@@ -29,17 +29,17 @@ public class Ruch  extends JFrame implements KeyListener{
 	
 	String[] [] chatBot={
 			//prawo
-			{"p", "prawo", "skrec w prawo", "poruszaj sie w prawo", "udaj sie w prawo"},
+			{"p", "prawo", "skrec w prawo", "poruszaj sie w prawo", "udaj sie w prawo", "w prawo"},
 			{"poruszam sie w prawo","zmierzam w prawym kierunku","kieruje sie w prawo"},
 			//lewo
-			{"l", "lewo", "skrec w lewo","poruszaj sie w lewo", "udaj sie w lewo"},
+			{"l", "lewo", "skrec w lewo","poruszaj sie w lewo", "udaj sie w lewo", "w lewo"},
 			{"poruszam sie w lewo", "zmierzam w lewym kierunku", "kieruje sie w lewo"},
 			//gora
-			{"g", "gora", "kieruj sie w gore", "udaj sie w gore", "poruszaj sie do gory"},
-			{"poruszam sie do gory", "zmierzam do gory", "kieruje sie do gory"},
+			{"g", "gora", "góra", "kieruj sie w gore","kieruj sie w górê", "udaj sie w gore","udaj sie w górê", "poruszaj sie do gory", "poruszaj sie do góry","w górê"},
+			{"poruszam sie do góry", "zmierzam do góry", "kieruje sie do góry"},
 			//dol
-			{"d", "dol", "kieruj sie w dol", "udaj sie w dol", "poruszaj sie w dol"},
-			{"poruszam sie do dolu", "zmierzam do dolu", "kieruje sie do dolu"},
+			{"d", "dol", "dó³", "kieruj sie w dol", "kieruj sie w dó³","udaj sie w dol","udaj sie w dó³", "poruszaj sie w dol","poruszaj sie w dó³", "w dó³"},
+			{"poruszam sie do do³u", "zmierzam do do³u", "kieruje sie do do³u"},
 			//przywitanie
 			{"czeœæ", "hello", "hej", "dzieñ dobry", "siema", "czesc","hi"},
 			{"czeœæ","hello","dzieñ dobry"},
