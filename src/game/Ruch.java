@@ -12,8 +12,7 @@ import java.lang.Math;
 public class Ruch  extends JFrame implements KeyListener{
 
 	
-	int x=1;
-	int y=1;
+	
 	JPanel p=new JPanel();
 	JTextArea dialog = new JTextArea(10,30);
 	JTextArea input= new JTextArea(1,30);
@@ -76,33 +75,61 @@ public class Ruch  extends JFrame implements KeyListener{
 			input.setEditable(false);
 			//grab quote
 			String quote=input.getText();
+			
 			input.setText("");
 			addText("Ty:\t"+quote);
-			quote.trim();
-			while(
+			//quote.trim();
+			/*while(
 					quote.charAt(quote.length()-1)=='!' ||
 					quote.charAt(quote.length()-1)=='.' ||
 					quote.charAt(quote.length()-1)=='?' 
 					){
 				quote=quote.substring(0, quote.length()-1 );
-			}
-			quote.trim();
+				quote.trim();
+			}*/
+			String[] tab= quote.split(" ");
+		/*	for(int i=0; i <tab.length;i++){
+				System.out.println(tab[i]);
+			}*/
+			
 			byte response=0;
 			//check for matches
 			int j=0; 
+			int numb=1;
 			while (response==0){
+				
+				for(int i=0; i <tab.length;i++){
+					for(int z=0; z <tab.length;z++){
+						if(tab[z].equals("2")){numb =2;break;}
+						if(tab[z].equals("3")){numb =3;break;}
+						if(tab[z].equals("4")){numb =4;break;}
+						if(tab[z].equals("5")){numb =5;break;}
+						if(tab[z].equals("6")){numb =6;break;}
+						if(tab[z].equals("7")){numb =7;break;}
+						if(tab[z].equals("8")){numb =8;break;}
+						if(tab[z].equals("9")){numb =9;break;}
+						
+					}
+					
+					if(tab[i].equals("prawo")){quote="prawo";break;}
+					if(tab[i].equals("lewo")) {quote="lewo";break;}
+					if(tab[i].equals("gora")){quote="gora";break;}
+					if(tab[i].equals("dol")) {quote="dol";break;}
+				}
 				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==0)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
-					if(Gra.maze.board[x][y+1]==1)
+					for(int move=0;move<numb;move++){
+					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY+1]==1)
 					{
-						Gra.maze.fog[x][y+1]=2;
-						Gra.maze.fog[x][y]=1;
-						y++;
-						Gra.uncover(x,y);
-					}	
+						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY+1]=2;
+						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=1;
+						Gra.maze.posY++;
+						Gra.uncover(Gra.maze.posX,Gra.maze.posY);
+					}
+					}
 					
 				}
 				
@@ -111,13 +138,15 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
-					if(Gra.maze.board[x][y-1]==1)
+					for(int move=0;move<numb;move++){
+					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY-1]==1)
 					{
-						Gra.maze.fog[x][y-1]=2;
-						Gra.maze.fog[x][y]=1;
-						y--;
-						Gra.uncover(x,y);
+						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY-1]=2;
+						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=1;
+						Gra.maze.posY--;
+						Gra.uncover(Gra.maze.posX,Gra.maze.posY);
 					}	
+					}
 				}
 				
 				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==2)
@@ -125,13 +154,15 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
-					if(Gra.maze.board[x-1][y]==1)
+					for(int move=0;move<numb;move++){
+					if(Gra.maze.board[Gra.maze.posX-1][Gra.maze.posY]==1)
 					{
-						Gra.maze.fog[x-1][y]=2;
-						Gra.maze.fog[x][y]=1;
-						x--;
-						Gra.uncover(x,y);
+						Gra.maze.fog[Gra.maze.posX-1][Gra.maze.posY]=2;
+						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=1;
+						Gra.maze.posX--;
+						Gra.uncover(Gra.maze.posX,Gra.maze.posY);
 					}	
+					}
 				}
 				
 				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==3)
@@ -139,14 +170,15 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
-
-					if(Gra.maze.board[x+1][y]==1)
+					for(int move=0;move<numb;move++){
+					if(Gra.maze.board[Gra.maze.posX+1][Gra.maze.posY]==1)
 					{
-						Gra.maze.fog[x+1][y]=2;
-						Gra.maze.fog[x][y]=1;
-						x++;
-						Gra.uncover(x,y);
+						Gra.maze.fog[Gra.maze.posX+1][Gra.maze.posY]=2;
+						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=1;
+						Gra.maze.posX++;
+						Gra.uncover(Gra.maze.posX,Gra.maze.posY);
 					}	
+					}
 				}
 		
 				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==4)
@@ -162,11 +194,12 @@ public class Ruch  extends JFrame implements KeyListener{
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
 				}
-j++;
+				 j++;
+				
 if(j*2==chatBot.length-1 && response==0){
 	response=1;
 }
-			}
+				
 			//default
 			if (response==1){
 				int r=(int)Math.floor(Math.random()*chatBot[chatBot.length-1].length);
@@ -174,9 +207,10 @@ if(j*2==chatBot.length-1 && response==0){
 				
 			}
 			addText("\n");
-					
+				}		
+		
 		}
-	}
+		}
 	
 	public void keyReleased(KeyEvent e){
 		if(e.getKeyCode()==KeyEvent.VK_ENTER){

@@ -63,8 +63,8 @@ public class Maze extends JPanel {
 	
 	int columns = board[0].length;
 	int rows = board.length;
-	int sizeX;
-	int sizeY;
+	int posX=1;
+	int posY=1;
 	
 	
 	void render(Graphics g)

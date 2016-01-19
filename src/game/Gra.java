@@ -21,8 +21,7 @@ import javax.swing.JFrame;
 			LOSE
 		}
 		
-		int x=1;
-		int y=1;
+		
 		public static STATE State = STATE.MENU;
 		public static String TITLE = "Wielka ucieczka";
 		public static int WIDTH = 800;
@@ -145,7 +144,6 @@ import javax.swing.JFrame;
 			choice = new Choice();
 			
 			
-			
 			this.addMouseListener(new MouseInput());
 			this.addKeyListener(new KeyInput(this));
 		}
@@ -197,46 +195,46 @@ import javax.swing.JFrame;
 			
 			if(key== KeyEvent.VK_LEFT){
 				
-				if(maze.board[x][y-1]==1)
+				if(maze.board[maze.posX][maze.posY-1]==1)
 				{
-					maze.fog[x][y-1]=2;
-					maze.fog[x][y]=1;
-					y--;
-					uncover(x,y);
+					maze.fog[maze.posX][maze.posY-1]=2;
+					maze.fog[maze.posX][maze.posY]=1;
+					maze.posY--;
+					uncover(maze.posX,maze.posY);
 					
 				}	
 			}
 			else if(key == KeyEvent.VK_UP){
-				if(maze.board[x-1][y]==1)
+				if(maze.board[maze.posX-1][maze.posY]==1)
 				{
-					maze.fog[x-1][y]=2;
-					maze.fog[x][y]=1;
-					x--;
+					maze.fog[maze.posX-1][maze.posY]=2;
+					maze.fog[maze.posX][maze.posY]=1;
+					maze.posX--;
 					
-					uncover(x,y);
+					uncover(maze.posX,maze.posY);
 				}	
 			}	
 			else if (key== KeyEvent.VK_RIGHT){
-				if(maze.board[x][y+1]==1)
+				if(maze.board[maze.posX][maze.posY+1]==1)
 				{
-					maze.fog[x][y+1]=2;
-					maze.fog[x][y]=1;
-					y++;
-					uncover(x,y);
+					maze.fog[maze.posX][maze.posY+1]=2;
+					maze.fog[maze.posX][maze.posY]=1;
+					maze.posY++;
+					uncover(maze.posX,maze.posY);
 					
 				}	
 			}
 			else if(key == KeyEvent.VK_DOWN){
 				
-				if(maze.board[x+1][y]==1)
+				if(maze.board[maze.posX+1][maze.posY]==1)
 				{
-					maze.fog[x+1][y]=2;
-					maze.fog[x][y]=1;
-					x++;
-					uncover(x,y);
+					maze.fog[maze.posX+1][maze.posY]=2;
+					maze.fog[maze.posX][maze.posY]=1;
+					maze.posX++;
+					uncover(maze.posX,maze.posY);
 					
 				}
-				else if(maze.board[x+1][y]==3)
+				else if(maze.board[maze.posX+1][maze.posY]==3)
 				{
 					State = STATE.END;
 				}
