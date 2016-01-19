@@ -48,6 +48,8 @@ import javax.swing.JFrame;
 		private Choice choice;
 		static Zegar zegar;
 		
+		public static String botname;
+		
 		
 		private synchronized void start()
 		{
@@ -112,6 +114,7 @@ import javax.swing.JFrame;
 		 else if(State == STATE.LOSE){
 			 
 			 g.drawImage(time,0,0,null);
+			 
 		 }
 		 g.dispose();
 		 bs.show();

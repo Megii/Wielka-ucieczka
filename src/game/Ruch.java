@@ -24,8 +24,6 @@ public class Ruch  extends JFrame implements KeyListener{
 			);
 
 
-
-	
 	String[] [] chatBot={
 			//prawo
 			{"p", "prawo", "skrec w prawo", "poruszaj sie w prawo", "udaj sie w prawo", "w prawo"},
@@ -68,6 +66,7 @@ public class Ruch  extends JFrame implements KeyListener{
 		p.setBackground(new Color(10,20,60));
 		add(p);
 		setVisible(true);
+	    
 		}
 	
 	public void keyPressed(KeyEvent e){
@@ -78,16 +77,18 @@ public class Ruch  extends JFrame implements KeyListener{
 			
 			input.setText("");
 			addText("Ty:\t"+quote);
-			//quote.trim();
-			/*while(
+			
+			String[] tab= quote.split(" ");
+			quote.trim();
+			while(
 					quote.charAt(quote.length()-1)=='!' ||
 					quote.charAt(quote.length()-1)=='.' ||
 					quote.charAt(quote.length()-1)=='?' 
 					){
 				quote=quote.substring(0, quote.length()-1 );
 				quote.trim();
-			}*/
-			String[] tab= quote.split(" ");
+			}
+			quote.trim();
 		/*	for(int i=0; i <tab.length;i++){
 				System.out.println(tab[i]);
 			}*/
@@ -120,7 +121,7 @@ public class Ruch  extends JFrame implements KeyListener{
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
-					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY+1]==1)
 					{
@@ -133,11 +134,11 @@ public class Ruch  extends JFrame implements KeyListener{
 					
 				}
 				
-				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==1)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==1)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
-					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY-1]==1)
 					{
@@ -149,11 +150,11 @@ public class Ruch  extends JFrame implements KeyListener{
 					}
 				}
 				
-				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==2)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==2)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
-					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX-1][Gra.maze.posY]==1)
 					{
@@ -165,11 +166,11 @@ public class Ruch  extends JFrame implements KeyListener{
 					}
 				}
 				
-				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==3)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==3)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
-					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX+1][Gra.maze.posY]==1)
 					{
@@ -181,18 +182,18 @@ public class Ruch  extends JFrame implements KeyListener{
 					}
 				}
 		
-				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==4)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==4)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
-					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 				}
 				
-				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==5)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==5)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
-					addText("\nHoracy:\t"+chatBot[(j*2)+1][r]);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 				}
 				 j++;
 				
@@ -203,10 +204,11 @@ if(j*2==chatBot.length-1 && response==0){
 			//default
 			if (response==1){
 				int r=(int)Math.floor(Math.random()*chatBot[chatBot.length-1].length);
-				addText("\nHoracy\t"+chatBot[chatBot.length-1][r]);	
+				addText("\n"+Gra.botname+":\t"+chatBot[chatBot.length-1][r]);	
 				
 			}
 			addText("\n");
+			
 				}		
 		
 		}

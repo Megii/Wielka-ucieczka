@@ -61,21 +61,34 @@ public class MouseInput implements MouseListener{
 		else if(Gra.State == Gra.STATE.CHOICE)
 		{
 			//batman
-			if(mx >= 0 && mx <= Gra.WIDTH /2)
-				if(my >= 0 && my <= Gra.HEIGHT /2)
+			if(mx >= 0 && mx <= Gra.WIDTH /2){
+				if(my >= 0 && my <= Gra.HEIGHT /2){
 					Gra.hero = Gra.batman;
+					Gra.botname = "Batman";
+				}
+			}
+								
 			//woman
-			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
-				if(my >= 0 && my <= Gra.HEIGHT /2)
+			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH){
+				if(my >= 0 && my <= Gra.HEIGHT /2){
 					Gra.hero = Gra.woman;
+					Gra.botname = "Wonder Woman";
+				}
+			}
 			//superman
-			if(mx >= 0 && mx <= Gra.WIDTH /2)
-				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
+			if(mx >= 0 && mx <= Gra.WIDTH /2){
+				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT ){
 					Gra.hero = Gra.superman;
+					Gra.botname = "Superman";
+				}
+			}
 			//clown
-			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH)
-				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT )
+			if(mx >= Gra.WIDTH /2 && mx <= Gra.WIDTH){
+				if(my >= Gra.HEIGHT /2 && my <= Gra.HEIGHT ){
 					Gra.hero = Gra.clown;
+					Gra.botname = "Joker";
+				}
+			}
 			
 			Ruch chat = new Ruch();
 			Gra.zegar = new Zegar();
