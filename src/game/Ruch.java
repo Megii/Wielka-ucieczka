@@ -43,6 +43,12 @@ public class Ruch  extends JFrame implements KeyListener{
 			//pytania
 			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz"},
 			{"dobrze", "ok"},
+			//pomoc
+			{"pomoc", "pomocy", "na czym polega gra", "help", "o co chodzi w grze", "jak mam grac"},
+			{"gra  polega na poruszaniu siê po labiryncie \n za pomoc¹ poleceñ tekstowych okreœlaj¹cych ruch", "poruszaj postaci¹ za pomoca \n poleceñ tekstowych b¹dŸ strza³ek"},
+			//poczatek
+			{"chcê na pocz¹tek planszy", "chce na poczatek planszy", "wycofaj siê na pocz¹tek", "wycofaj sie na poczatek", "cofnij sie na poczatek", "cofnij siê na pocz¹tek planszy", "pocz¹tek", "poczatek"},
+			{"wycofujê siê na pocz¹tek planszy", "znajdujê siê na pocz¹tku planszy"},
 			//default
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
@@ -122,6 +128,7 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					addText("\n");
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY+1]==1)
 					{
@@ -139,6 +146,7 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					addText("\n");
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY-1]==1)
 					{
@@ -155,6 +163,7 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					addText("\n");
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX-1][Gra.maze.posY]==1)
 					{
@@ -171,6 +180,7 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					addText("\n");
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX+1][Gra.maze.posY]==1)
 					{
@@ -187,6 +197,7 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					
 				}
 				
 				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==5)
@@ -194,6 +205,28 @@ public class Ruch  extends JFrame implements KeyListener{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==6)
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					addText("\n");
+					
+					Gra.maze.posX=2;
+					Gra.maze.posY=2;
+						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=2;
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==7)
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					
 				}
 				 j++;
 				
@@ -207,10 +240,10 @@ if(j*2==chatBot.length-1 && response==0){
 				addText("\n"+Gra.botname+":\t"+chatBot[chatBot.length-1][r]);	
 				
 			}
-			addText("\n");
+			
 			
 				}		
-		
+			addText("\n");
 		}
 		}
 	

@@ -69,6 +69,7 @@ public class Maze extends JPanel {
 	int prevY=0;
 	
 	
+	
 	void render(Graphics g)
 	{
 		 for(int i=0; i<rows; i++)
