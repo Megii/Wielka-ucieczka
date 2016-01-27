@@ -132,6 +132,8 @@ public class Ruch  extends JFrame implements KeyListener{
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					addText("\n");
+					Gra.maze.prevX= Gra.maze.posX;
+					Gra.maze.prevY= Gra.maze.posY;
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY+1]==1)
 					{
