@@ -49,6 +49,9 @@ public class Ruch  extends JFrame implements KeyListener{
 			//poczatek
 			{"chcê na pocz¹tek planszy", "chce na poczatek planszy", "wycofaj siê na pocz¹tek", "wycofaj sie na poczatek", "cofnij sie na poczatek", "cofnij siê na pocz¹tek planszy", "pocz¹tek", "poczatek"},
 			{"wycofujê siê na pocz¹tek planszy", "znajdujê siê na pocz¹tku planszy"},
+			//cofanie
+			{"cofnij", "anuluj","cofnij ruch", "anuluj ruch", "wycofaj siê" },
+			{"cofam Twój ostatni ruch", "wycofujê siê"},
 			//default
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
@@ -147,6 +150,8 @@ public class Ruch  extends JFrame implements KeyListener{
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					addText("\n");
+					Gra.maze.prevX= Gra.maze.posX;
+					Gra.maze.prevY= Gra.maze.posY;
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX][Gra.maze.posY-1]==1)
 					{
@@ -164,6 +169,8 @@ public class Ruch  extends JFrame implements KeyListener{
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					addText("\n");
+					Gra.maze.prevX= Gra.maze.posX;
+					Gra.maze.prevY= Gra.maze.posY;
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX-1][Gra.maze.posY]==1)
 					{
@@ -181,6 +188,8 @@ public class Ruch  extends JFrame implements KeyListener{
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					addText("\n");
+					Gra.maze.prevX= Gra.maze.posX;
+					Gra.maze.prevY= Gra.maze.posY;
 					for(int move=0;move<numb;move++){
 					if(Gra.maze.board[Gra.maze.posX+1][Gra.maze.posY]==1)
 					{
@@ -229,6 +238,17 @@ public class Ruch  extends JFrame implements KeyListener{
 				}
 				
 				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==8)
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					addText("\n");
+					Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=1;
+					Gra.maze.fog[Gra.maze.prevX][Gra.maze.prevY]=2;
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==9)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);

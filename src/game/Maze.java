@@ -2,6 +2,7 @@ package game;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.io.FileInputStream;
 import java.util.Timer;
 
 import javax.swing.JPanel;
@@ -10,6 +11,8 @@ import javax.swing.JPanel;
 
 public class Maze extends JPanel {
 
+	
+	
 	
 	int[][] board={
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -65,8 +68,8 @@ public class Maze extends JPanel {
 	int rows = board.length;
 	int posX=1;
 	int posY=1;
-	int prevX=0;
-	int prevY=0;
+	int prevX=1;
+	int prevY=1;
 	
 	
 	

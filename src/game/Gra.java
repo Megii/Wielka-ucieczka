@@ -7,11 +7,16 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
+
+
 
 import javax.swing.JFrame;
 	public class Gra extends Canvas implements Runnable{
 			
+		
+		
 		public static enum STATE
 		{
 			MENU,
