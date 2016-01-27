@@ -200,8 +200,9 @@ import javax.swing.JFrame;
 			
 			maze.prevX= maze.posX;
 			maze.prevY= maze.posY;
+			
 			if(State == STATE.GAME)
-			{ 	maze.prevX= maze.posX;
+			{maze.prevX= maze.posX;
 			maze.prevY= maze.posY;
 			
 			if(key== KeyEvent.VK_LEFT){
