@@ -198,9 +198,12 @@ import javax.swing.JFrame;
 		public void keyPressed(int key)
 		{
 			
-			
+			maze.prevX= maze.posX;
+			maze.prevY= maze.posY;
 			if(State == STATE.GAME)
-			{
+			{ 	maze.prevX= maze.posX;
+			maze.prevY= maze.posY;
+			
 			if(key== KeyEvent.VK_LEFT){
 				maze.prevX= maze.posX;
 				maze.prevY= maze.posY;
