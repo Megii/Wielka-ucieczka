@@ -197,15 +197,14 @@ import javax.swing.JFrame;
 		}
 		public void keyPressed(int key)
 		{
-			maze.prevX= maze.posX;
-			maze.prevY= maze.posY;
+			
 			
 			if(State == STATE.GAME)
 			{
-			
 			if(key== KeyEvent.VK_LEFT){
 				maze.prevX= maze.posX;
 				maze.prevY= maze.posY;
+				
 				if(maze.board[maze.posX][maze.posY-1]==1)
 				{
 					maze.fog[maze.posX][maze.posY-1]=2;
@@ -218,6 +217,7 @@ import javax.swing.JFrame;
 			else if(key == KeyEvent.VK_UP){
 				maze.prevX= maze.posX;
 				maze.prevY= maze.posY;
+				
 				if(maze.board[maze.posX-1][maze.posY]==1)
 				{
 					maze.fog[maze.posX-1][maze.posY]=2;
@@ -230,6 +230,7 @@ import javax.swing.JFrame;
 			else if (key== KeyEvent.VK_RIGHT){
 				maze.prevX= maze.posX;
 				maze.prevY= maze.posY;
+				
 				if(maze.board[maze.posX][maze.posY+1]==1)
 				{
 					maze.fog[maze.posX][maze.posY+1]=2;
@@ -242,6 +243,8 @@ import javax.swing.JFrame;
 			else if(key == KeyEvent.VK_DOWN){
 				maze.prevX= maze.posX;
 				maze.prevY= maze.posY;
+				
+				
 				if(maze.board[maze.posX+1][maze.posY]==1)
 				{
 					maze.fog[maze.posX+1][maze.posY]=2;
