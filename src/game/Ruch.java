@@ -207,21 +207,28 @@ public class Ruch  extends JFrame implements KeyListener{
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
 					
 				}
-				
+			
 				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==6)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
 					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
-					addText("\n");
 					
-					Gra.maze.posX=2;
-					Gra.maze.posY=2;
+				}
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==7)
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					addText("\n");
+					Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=1;
+					Gra.maze.posX=1;
+					Gra.maze.posY=1;
 						Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=2;
 					
 				}
 				
-				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==7)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==8)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
