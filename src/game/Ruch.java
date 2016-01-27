@@ -25,34 +25,34 @@ public class Ruch  extends JFrame implements KeyListener{
 
 
 	String[] [] chatBot={
-			//prawo
+			//prawo0
 			{"p", "prawo", "skrec w prawo", "poruszaj sie w prawo", "udaj sie w prawo", "w prawo"},
 			{"poruszam sie w prawo","zmierzam w prawym kierunku","kieruje sie w prawo"},
-			//lewo
+			//lewo1
 			{"l", "lewo", "skrec w lewo","poruszaj sie w lewo", "udaj sie w lewo", "w lewo"},
 			{"poruszam sie w lewo", "zmierzam w lewym kierunku", "kieruje sie w lewo"},
-			//gora
+			//gora2
 			{"g", "gora", "góra", "kieruj sie w gore","kieruj sie w górê", "udaj sie w gore","udaj sie w górê", "poruszaj sie do gory", "poruszaj sie do góry","w górê"},
 			{"poruszam sie do góry", "zmierzam do góry", "kieruje sie do góry"},
-			//dol
+			//dol3
 			{"d", "dol", "dó³", "kieruj sie w dol", "kieruj sie w dó³","udaj sie w dol","udaj sie w dó³", "poruszaj sie w dol","poruszaj sie w dó³", "w dó³"},
 			{"poruszam sie do do³u", "zmierzam do do³u", "kieruje sie do do³u"},
-			//przywitanie
+			//przywitanie4
 			{"czeœæ", "hello", "hej", "dzieñ dobry", "siema", "czesc","hi"},
 			{"czeœæ","hello","dzieñ dobry"},
-			//pytania
+			//pytania5		
 			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz"},
 			{"dobrze", "ok"},
-			//pomoc
+			//pomoc6
 			{"pomoc", "pomocy", "na czym polega gra", "help", "o co chodzi w grze", "jak mam grac"},
 			{"gra  polega na poruszaniu siê po labiryncie \n za pomoc¹ poleceñ tekstowych okreœlaj¹cych ruch", "poruszaj postaci¹ za pomoca \n poleceñ tekstowych b¹dŸ strza³ek"},
-			//poczatek
+			//poczatek7
 			{"chcê na pocz¹tek planszy", "chce na poczatek planszy", "wycofaj siê na pocz¹tek", "wycofaj sie na poczatek", "cofnij sie na poczatek", "cofnij siê na pocz¹tek planszy", "pocz¹tek", "poczatek"},
 			{"wycofujê siê na pocz¹tek planszy", "znajdujê siê na pocz¹tku planszy"},
-			//cofanie
+			//cofanie8
 			{"cofnij", "anuluj","cofnij ruch", "anuluj ruch", "wycofaj siê" },
 			{"cofam Twój ostatni ruch", "wycofujê siê"},
-			//default
+			//default9
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
 	};
@@ -245,6 +245,8 @@ public class Ruch  extends JFrame implements KeyListener{
 					addText("\n");
 					Gra.maze.fog[Gra.maze.posX][Gra.maze.posY]=1;
 					Gra.maze.fog[Gra.maze.prevX][Gra.maze.prevY]=2;
+					Gra.maze.posX=Gra.maze.prevX;
+					Gra.maze.posY=Gra.maze.prevY;
 					
 				}
 				
