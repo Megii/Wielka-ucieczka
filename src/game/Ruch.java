@@ -7,8 +7,9 @@ import javax.swing.JTextArea;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import java.lang.Math;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 public class Ruch  extends JFrame implements KeyListener{
 
 	
@@ -41,13 +42,13 @@ public class Ruch  extends JFrame implements KeyListener{
 			{"czeœæ", "hello", "hej", "dzieñ dobry", "siema", "czesc","hi"},
 			{"czeœæ","hello","dzieñ dobry"},
 			//pytania5		
-			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz"},
+			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz", "co u Ciebie s³ychaæ"},
 			{"dobrze", "ok"},
 			//pomoc6
 			{"pomoc", "pomocy", "na czym polega gra", "help", "o co chodzi w grze", "jak mam grac"},
 			{"gra  polega na poruszaniu siê po labiryncie \n za pomoc¹ poleceñ tekstowych okreœlaj¹cych ruch", "poruszaj postaci¹ za pomoca \n poleceñ tekstowych b¹dŸ strza³ek"},
 			//poczatek7
-			{"chcê na pocz¹tek planszy", "chce na poczatek planszy", "wycofaj siê na pocz¹tek", "wycofaj sie na poczatek", "cofnij sie na poczatek", "cofnij siê na pocz¹tek planszy", "pocz¹tek", "poczatek"},
+			{"chcê na pocz¹tek planszy", "chce na poczatek planszy", "wycofaj siê na pocz¹tek", "wycofaj sie na poczatek", "cofnij sie na poczatek", "cofnij siê na pocz¹tek planszy", "pocz¹tek", "poczatek", "wycofaj na poczatek"},
 			{"wycofujê siê na pocz¹tek planszy", "znajdujê siê na pocz¹tku planszy"},
 			//cofanie8
 			{"cofnij", "anuluj","cofnij ruch", "anuluj ruch", "wycofaj siê" },
@@ -122,9 +123,25 @@ public class Ruch  extends JFrame implements KeyListener{
 					}
 					
 					if(tab[i].equals("prawo")){quote="prawo";break;}
+					if(tab[i].equals("p")){quote="prawo";break;}
+					if(tab[i].equals("prawym")){quote="prawo";break;}
 					if(tab[i].equals("lewo")) {quote="lewo";break;}
+					if(tab[i].equals("l")){quote="prawo";break;}
+					if(tab[i].equals("lewym")){quote="prawo";break;}
 					if(tab[i].equals("gora")){quote="gora";break;}
+					if(tab[i].equals("góra")){quote="gora";break;}
+					if(tab[i].equals("g")){quote="gora";break;}
+					if(tab[i].equals("górê")){quote="gora";break;}
+					if(tab[i].equals("gore")){quote="gora";break;}
+					if(tab[i].equals("gory")){quote="gora";break;}
+					if(tab[i].equals("góry")){quote="gora";break;}
 					if(tab[i].equals("dol")) {quote="dol";break;}
+					if(tab[i].equals("d")) {quote="dol";break;}
+					if(tab[i].equals("dolu")) {quote="dol";break;}
+					if(tab[i].equals("do³u")) {quote="dol";break;}
+					if(tab[i].equals("dó³")) {quote="dol";break;}
+					
+					
 				}
 				if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==0)
 				{
@@ -277,6 +294,16 @@ if(j*2==chatBot.length-1 && response==0){
 			addText("\n");
 		}
 		}
+	public String currentDateStr()
+	{
+	  String currDate;
+
+	  DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	  java.util.Date date = new java.util.Date();
+	  currDate = dateFormat.format(date);
+
+	  return (currDate);
+	}
 	
 	public void keyReleased(KeyEvent e){
 		if(e.getKeyCode()==KeyEvent.VK_ENTER){
