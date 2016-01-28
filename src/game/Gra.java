@@ -201,28 +201,29 @@ import javax.swing.JFrame;
 			
 			
 			if(State == STATE.GAME)
-			{maze.prevX= maze.posX;
-			maze.prevY= maze.posY;
+			{
 			
 			if(key== KeyEvent.VK_LEFT){
-				maze.prevX= maze.posX;
-				maze.prevY= maze.posY;
+				
 				
 				if(maze.board[maze.posX][maze.posY-1]==1)
-				{
+				{ maze.prevX= maze.posX;
+				maze.prevY= maze.posY;
 					maze.fog[maze.posX][maze.posY-1]=2;
 					maze.fog[maze.posX][maze.posY]=1;
 					maze.posY--;
 					uncover(maze.posX,maze.posY);
 					
 				}	
-			}
+				
+			} 
+		
 			else if(key == KeyEvent.VK_UP){
-				maze.prevX= maze.posX;
-				maze.prevY= maze.posY;
+				
 				
 				if(maze.board[maze.posX-1][maze.posY]==1)
-				{
+				{maze.prevX= maze.posX;
+				maze.prevY= maze.posY;
 					maze.fog[maze.posX-1][maze.posY]=2;
 					maze.fog[maze.posX][maze.posY]=1;
 					maze.posX--;
@@ -231,11 +232,11 @@ import javax.swing.JFrame;
 				}	
 			}	
 			else if (key== KeyEvent.VK_RIGHT){
-				maze.prevX= maze.posX;
-				maze.prevY= maze.posY;
+				
 				
 				if(maze.board[maze.posX][maze.posY+1]==1)
-				{
+				{maze.prevX= maze.posX;
+				maze.prevY= maze.posY;
 					maze.fog[maze.posX][maze.posY+1]=2;
 					maze.fog[maze.posX][maze.posY]=1;
 					maze.posY++;
@@ -244,12 +245,12 @@ import javax.swing.JFrame;
 				}	
 			}
 			else if(key == KeyEvent.VK_DOWN){
-				maze.prevX= maze.posX;
+			
+				if(maze.board[maze.posX+1][maze.posY]==1)
+				{	maze.prevX= maze.posX;
 				maze.prevY= maze.posY;
 				
 				
-				if(maze.board[maze.posX+1][maze.posY]==1)
-				{
 					maze.fog[maze.posX+1][maze.posY]=2;
 					maze.fog[maze.posX][maze.posY]=1;
 					maze.posX++;
