@@ -42,7 +42,7 @@ public class Ruch  extends JFrame implements KeyListener{
 			{"czeœæ", "hello", "hej", "dzieñ dobry", "siema", "czesc","hi"},
 			{"czeœæ","hello","dzieñ dobry"},
 			//pytania5		
-			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz", "co u Ciebie s³ychaæ"},
+			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz", "co u Ciebie s³ychaæ", "co tam u Ciebie s³ychaæ", "co tam u ciebie slychac"},
 			{"dobrze", "ok", "W porz¹dku", "Wszystko w porz¹dku"},
 			//pomoc6
 			{"pomoc", "pomocy", "na czym polega gra", "help", "o co chodzi w grze", "jak mam grac"},
@@ -54,8 +54,11 @@ public class Ruch  extends JFrame implements KeyListener{
 			{"cofnij", "anuluj","cofnij ruch", "anuluj ruch", "wycofaj siê" },
 			{"cofam Twój ostatni ruch", "wycofujê siê"},
 			//data
-			{"który dziœ jest", "jaki mamy dziœ dzieñ", "podaj mi date", "jaki mamy dzis dzien", "ktory dzis jest"},
-			{"dziœ jest:", "dzisiejsza data to:"},
+			{"który dziœ jest", "jaki mamy dziœ dzieñ", "podaj mi date", "jaki mamy dzis dzien", "ktory dzis jest", "podaj date", "data"},
+			{"dziœ jest:  ", "dzisiejsza data to:  "},
+			//kto
+			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie"},
+			{"batman"},
 			//default9
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
@@ -280,7 +283,15 @@ public class Ruch  extends JFrame implements KeyListener{
 					
 				}
 				
-				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==10)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==10 & Gra.botname=="Batman")
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==11)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
