@@ -43,7 +43,7 @@ public class Ruch  extends JFrame implements KeyListener{
 			{"czeœæ","hello","dzieñ dobry"},
 			//pytania5		
 			{"jak siê masz", "co tam", "co u Ciebie","jak sie masz", "co u Ciebie s³ychaæ"},
-			{"dobrze", "ok"},
+			{"dobrze", "ok", "W porz¹dku", "Wszystko w porz¹dku"},
 			//pomoc6
 			{"pomoc", "pomocy", "na czym polega gra", "help", "o co chodzi w grze", "jak mam grac"},
 			{"gra  polega na poruszaniu siê po labiryncie \n za pomoc¹ poleceñ tekstowych okreœlaj¹cych ruch", "poruszaj postaci¹ za pomoca \n poleceñ tekstowych b¹dŸ strza³ek"},
@@ -53,6 +53,9 @@ public class Ruch  extends JFrame implements KeyListener{
 			//cofanie8
 			{"cofnij", "anuluj","cofnij ruch", "anuluj ruch", "wycofaj siê" },
 			{"cofam Twój ostatni ruch", "wycofujê siê"},
+			//data
+			{"który dziœ jest", "jaki mamy dziœ dzieñ", "podaj mi date", "jaki mamy dzis dzien", "ktory dzis jest"},
+			{"dziœ jest:", "dzisiejsza data to:"},
 			//default9
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
@@ -270,6 +273,14 @@ public class Ruch  extends JFrame implements KeyListener{
 				}
 				
 				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==9)
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]+currentDateStr());
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==10)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
