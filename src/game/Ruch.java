@@ -64,7 +64,7 @@ public class Ruch  extends JFrame implements KeyListener{
 			{"Jestem z³oczyñc¹. Uwielbiam z³o. \n Moim najwiêkszym wrogiem jest Batman."},
 			//woman
 			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
-			{"Jestem królow¹ Amazonek, stojê na czele sprawiedliwoœci. \n Moje prawdziwe imiê to Diana."},
+			{"Jestem królow¹ Amazonek, \n stojê na czele sprawiedliwoœci. \n Moje prawdziwe imiê to Diana."},
 			//superman
 			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
 			{"Przyby³em z innej planety. \n Nazywam siê Clark Kent. \nPodobnie jak Batman ratujê œwiat przed z³em. \n Na codzieñ jestem reporterem w Daily Planet."},
