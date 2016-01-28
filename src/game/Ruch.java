@@ -58,16 +58,16 @@ public class Ruch  extends JFrame implements KeyListener{
 			{"dziœ jest:  ", "dzisiejsza data to:  "},
 			//batman
 			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
-			{"Nazywam siê Bruce Wayne. Za dnia jestem milionerem, w nocy zamieniam siê w superbohatera i ratujê œwiat. Ludzie mówi¹ na mnie Batman"},
+			{"Nazywam siê Bruce Wayne. \n Za dnia jestem milionerem,\n w nocy zamieniam siê w superbohatera i ratujê œwiat. \n Ludzie mówi¹ na mnie Batman"},
 			//joker
 			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
-			{"Jestem z³oczyñc¹."},
-			//women
+			{"Jestem z³oczyñc¹. Uwielbiam z³o. \n Moim najwiêkszym wrogiem jest Batman."},
+			//woman
 			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
-			{"Jestem superbohaterk¹."},
+			{"Jestem królow¹ Amazonek, stojê na czele sprawiedliwoœci. \n Moje prawdziwe imiê to Diana."},
 			//superman
 			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
-			{"superman"},
+			{"Przyby³em z innej planety. \n Nazywam siê Clark Kent. \nPodobnie jak Batman ratujê œwiat przed z³em. \n Na codzieñ jestem reporterem w Daily Planet."},
 			//default9
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
