@@ -56,9 +56,18 @@ public class Ruch  extends JFrame implements KeyListener{
 			//data
 			{"który dziœ jest", "jaki mamy dziœ dzieñ", "podaj mi date", "jaki mamy dzis dzien", "ktory dzis jest", "podaj date", "data"},
 			{"dziœ jest:  ", "dzisiejsza data to:  "},
-			//kto
-			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie"},
-			{"batman"},
+			//batman
+			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
+			{"Nazywam siê Bruce Wayne. Za dnia jestem milionerem, w nocy zamieniam siê w superbohatera i ratujê œwiat. Ludzie mówi¹ na mnie Batman"},
+			//joker
+			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
+			{"Jestem z³oczyñc¹."},
+			//women
+			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
+			{"Jestem superbohaterk¹."},
+			//superman
+			{"kim jesteœ", "kim jestes", "powiedz mi coœ o sobie", "powiedz mi cos o sobie", "przedstaw sie", "przedstaw siê"},
+			{"superman"},
 			//default9
 			{"nie moge wykonac ruchu", "nie moge sie tam poruszyc"},
 			
@@ -291,7 +300,31 @@ public class Ruch  extends JFrame implements KeyListener{
 					
 				}
 				
-				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==11)
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==11 & Gra.botname=="Joker")
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==12 & Gra.botname=="Wonder Woman")
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==13 & Gra.botname=="Superman")
+				{
+					response=2;
+					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
+					addText("\n"+Gra.botname+":\t"+chatBot[(j*2)+1][r]);
+					
+				}
+				
+				else if(inArray(quote.toLowerCase(),chatBot[j*2]) & j==14)
 				{
 					response=2;
 					int r=(int)Math.floor(Math.random()*chatBot[(j*2)+1].length);
